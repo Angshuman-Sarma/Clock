@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Document</title>
+    <link rel="stylesheet" href="clock.css">
+</head>
+<body>
+    <div class="box">
+        <div class="container">
+            <div class="clock">
+            <span id="hrs">00</span>
+            <span>:</span>
+            <span id="mins">00</span>
+            <span>:</span>
+            <span id="sec">00</span>
+            </div>
+        </div>
+    </div>
+<script>
+
+    hrsobj=document.getElementById('hrs');
+    minobj=document.getElementById('mins');
+    secobj=document.getElementById('sec');
+
+    // console.log(currentime);
+    // console.log(currentime.getHours());
+
+    // setInterval(()=>{
+
+    //     currentime= new Date();
+
+    //     hrsobj.innerHTML = currentime.getHours();
+    //     minobj.innerHTML = currentime.getMinutes();
+    //     secobj.innerHTML = currentime.getSeconds();
+
+    // },1000)
+
+    // thousand mili sec is 1 sec
+
+   // below we add an inline if condition to add 0 before a single digit number 
+    setInterval(()=>{
+
+currentime= new Date();
+
+hrsobj.innerHTML = (currentime.getHours()<10?"0":"") + currentime.getHours();
+minobj.innerHTML = (currentime.getMinutes()<10?"0":"") + currentime.getMinutes();
+secobj.innerHTML = (currentime.getSeconds()<10?"0":"") + currentime.getSeconds();
+
+},1000)
+</script>
+</body>
+</html>
